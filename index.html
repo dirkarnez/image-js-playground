@@ -14,12 +14,16 @@
       async function process() {
         let image = await IJS.Image.load(document.getElementById('color').src);
 	
-        var output = image.crop({
-          x:40,
-          y:40,
+        var output = image
+        .rotate(30, {
+        	interpolation: "bilinear" // "bilinear" is apparently better than "nearestNeighbor"
+        })
+        .crop({
+          x: 150,
+          y: 150,
           width : image.width / 2,
           height: image.height / 2
-        });
+        })
 
         document.getElementById('result').src = output.toDataURL();
       }
