@@ -1,8 +1,4 @@
 <html>
-  <head>
-    <script src="https://www.lactame.com/lib/image-js/0.21.2/image.min.js"></script>
-  </head>
-
   <body>
     <img
       id="color"
@@ -11,8 +7,19 @@
     <img id="result" />
 
     <script>
-      async function process() {
-        let image = await IJS.Image.load(document.getElementById('color').src);
+      (async () => {
+        fetch("./image-js.0.35.5.min.js")
+        .then(data => data.text())
+        .then(async jsCode => {
+          eval(jsCode); // imagejs is declared
+          if (!!imagejs) {
+            await process(imagejs.Image)
+          }
+        })
+      })()
+
+      async function process(imagejsImage) {
+        let image = await imagejsImage.load(document.getElementById('color').src);
 	
         var output = image
         .rotate(30, {
@@ -27,7 +34,6 @@
 
         document.getElementById('result').src = output.toDataURL();
       }
-      process();
     </script>
   </body>
 </html>
