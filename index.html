@@ -32,7 +32,7 @@
           height: image.height / 2
         })
 
-        document.getElementById('result').src = output.toDataURL();
+        document.getElementById('result').src = output.toDataURL("image/jpeg", { useCanvas: true });
       }
     </script>
   </body>
