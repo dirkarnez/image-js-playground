@@ -32,7 +32,7 @@
           height: image.height / 2
         })
 
-	const blob = await utput.toBlob();
+	const blob = await output.toBlob();
 	const objectURL = URL.createObjectURL(blob);
 
         document.getElementById('result').src = objectURL;//output.toDataURL("image/jpeg", { useCanvas: true });
