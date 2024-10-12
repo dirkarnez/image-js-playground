@@ -5,7 +5,23 @@
       src="https://www.lactame.com/github/image-js/image-js/3073b80c7d626196cb669f9d617f491a8338ca66/test/img/taxi/original.jpeg"
     />
     <img id="result" />
-
+    <script>
+	Promise.all(
+            [
+                "./bitecs.0.3.40.min.js",
+                "./phaser.3.86.0.min.js"
+            ]
+            .map(src => (
+                fetch(src)
+                .then(a => a.text())
+            ))
+        )
+        .then(codes => {
+            for (const code of codes) {
+                eval(code);
+            }
+	});
+    </script>
     <script>
       (async () => {
         fetch("./image-js.0.35.5.min.js")
