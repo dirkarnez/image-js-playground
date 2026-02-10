@@ -57,7 +57,7 @@ const readImageAsArrayBuffer = (file: File): Promise<ReadImage> => new Promise((
       const image: Image = decode(new DataView(readImage.content as ArrayBuffer));
       return image
         .grey()
-        .threshold();
+        .threshold(); // default option is empty
     })
     .forEach((image, _) => {
       const canvas = document.createElement("canvas");
