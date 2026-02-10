@@ -39,7 +39,6 @@ const readImageAsArrayBuffer = (file: File): Promise<ReadImage> => new Promise((
     reader.readAsArrayBuffer(file)
 });
 
-
 (async (appContainer: HTMLDivElement) => {
   if (!appContainer) {
     return;
