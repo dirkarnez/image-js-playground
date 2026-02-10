@@ -1,4 +1,4 @@
-[image-js-playground](https://dirkarnez.github.io/image-js-playground/)
+[image-js-playground](https://dirkarnez.github.io/image-js-playground/dist)
 =======================================================================
 ### API documentation
 - [Getting started | ImageJS](https://docs.image-js.org/docs/getting-started/)
