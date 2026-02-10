@@ -47,7 +47,7 @@ const readImageAsArrayBuffer = (file: File): Promise<ReadImage> => new Promise((
   const inputFileElement = document.createElement("input");
   inputFileElement.type = "file";
   inputFileElement.multiple = true;
-  inputFileElement.classname = "form-control";
+  inputFileElement.className = "form-control";
   inputFileElement.addEventListener("change", async (event) => {
     const target = event.target as HTMLInputElement;
     const files = target.files as FileList;
