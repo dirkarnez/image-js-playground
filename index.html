@@ -1,58 +1,15 @@
-<html>
-  <body>
-    <img
-      id="color"
-      src="https://www.lactame.com/github/image-js/image-js/3073b80c7d626196cb669f9d617f491a8338ca66/test/img/taxi/original.jpeg"
-    />
-    <img id="result" />
-    <script>
-	Promise.all(
-            [
-                "./bitecs.0.3.40.min.js",
-                "./phaser.3.86.0.min.js"
-            ]
-            .map(src => (
-                fetch(src)
-                .then(a => a.text())
-            ))
-        )
-        .then(codes => {
-            for (const code of codes) {
-                eval(code);
-            }
-	});
-    </script>
-    <script>
-      (async () => {
-        fetch("./image-js.0.35.5.min.js")
-        .then(data => data.text())
-        .then(async jsCode => {
-          eval(jsCode); // imagejs is declared
-          if (!!imagejs) {
-            await process(imagejs.Image)
-          }
-        })
-      })()
+<!doctype html>
+<html lang="en">
 
-      async function process(imagejsImage) {
-        let image = await imagejsImage.load(document.getElementById('color').src);
-	
-        var output = image
-        .rotate(30, {
-        	interpolation: "bilinear" // "bilinear" is apparently better than "nearestNeighbor"
-        })
-        .crop({
-          x: 150,
-          y: 150,
-          width : image.width / 2,
-          height: image.height / 2
-        })
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-	const blob = await output.toBlob();
-	const objectURL = URL.createObjectURL(blob);
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
 
-        document.getElementById('result').src = objectURL;//output.toDataURL("image/jpeg", { useCanvas: true });
-      }
-    </script>
-  </body>
 </html>
