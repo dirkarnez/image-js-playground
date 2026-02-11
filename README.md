@@ -17,3 +17,7 @@
 - [Applying transform function on images | ImageJS](https://docs.image-js.org/docs/tutorials/applying-transform-function-on-images/)
   - [Projective Transformations](https://docs.image-js.org/docs/tutorials/applying-transform-function-on-images/#projective-transformations-1)
 - [Convolution](https://docs.image-js.org/docs/glossary#convolution)
+- Binariztion
+  - [Automatic Document Image Binarization using Bayesian Optimization](https://arxiv.org/pdf/1709.01782)
+  - https://medium.com/@tharindad7/image-binarization-in-a-nutshell-b40b63c0228e
+  - https://github.com/daenetCorporation/imagebinarizer
